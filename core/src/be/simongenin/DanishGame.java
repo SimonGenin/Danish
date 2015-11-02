@@ -1,5 +1,8 @@
 package be.simongenin;
 
+import be.simongenin.models.Card;
+import be.simongenin.models.enums.CardSuit;
+import be.simongenin.models.enums.CardValue;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -12,6 +15,11 @@ public class DanishGame extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
+
+		Card c = new Card(CardSuit.CLUBS, CardValue.AS);
+		System.out.println(c);
+		System.out.println(c.toStringBrief());
+
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
 	}
