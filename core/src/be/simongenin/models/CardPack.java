@@ -31,6 +31,15 @@ public class CardPack {
         return sb.toString();
     }
 
+    public void add(Card c) {
+        mCards.add(c);
+    }
+
+    public void add(CardPack pack) {
+        for (Card c : pack.mCards)
+            add(c);
+    }
+
     /**
      * Retourne un string affichant les cartes contenues dans le
      * packet sous un format de 2 caractères.
