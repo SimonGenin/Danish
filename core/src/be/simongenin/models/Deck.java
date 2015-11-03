@@ -16,14 +16,15 @@ import java.util.List;
  */
 public class Deck {
 
-    private List<Card> cards;
+    // les cartes contenues dans le deck
+    private List<Card> mCards;
 
     /**
      * Créer un nouveau deck de 52 cartes.
      * Le deck n'est pas trié.
      */
     public Deck() {
-        cards = new ArrayList<Card>();
+        mCards = new ArrayList<Card>();
         fillDeck();
     }
 
@@ -31,7 +32,7 @@ public class Deck {
      * Mélange le deck
      */
     public void shuffle() {
-        Collections.shuffle(cards);
+        Collections.shuffle(mCards);
     }
 
     /**
@@ -41,7 +42,7 @@ public class Deck {
     private void fillDeck() {
         for (CardSuit cs : CardSuit.values())
             for (CardValue cv : CardValue.values())
-                cards.add(new Card(cs, cv));
+                mCards.add(new Card(cs, cv));
     }
 
     /**
@@ -51,20 +52,20 @@ public class Deck {
      */
     public Card draw() throws EmptyDeckException {
         if (size() == 0) throw new EmptyDeckException("Deck.draw()");
-        return cards.remove(cards.size() - 1);
+        return mCards.remove(mCards.size() - 1);
     }
 
     /**
      * Renvoi le nombre de cartes dans le deck
      */
     public int size() {
-        return cards.size();
+        return mCards.size();
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Deck : \n");
-        for (Card c : cards)
+        for (Card c : mCards)
             sb.append(c.toString()).append("\n");
         return sb.toString();
     }
@@ -75,7 +76,7 @@ public class Deck {
      */
     public String toStringBrief() {
         StringBuilder sb = new StringBuilder("Deck : \n");
-        for (Card c : cards)
+        for (Card c : mCards)
             sb.append(c.toStringBrief()).append("\n");;
         return sb.toString();
     }

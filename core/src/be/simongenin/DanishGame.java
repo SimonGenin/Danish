@@ -15,7 +15,6 @@ public class DanishGame extends ApplicationAdapter {
 	public void create () {
 
 		Deck d = new Deck();
-		d.draw();
 		d.shuffle();
 		System.out.println(d);
 		System.out.println(d.toStringBrief());

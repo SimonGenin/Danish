@@ -9,7 +9,9 @@ import be.simongenin.models.enums.CardValue;
  */
 public class Card {
 
+    // la couleur de la carte
     private CardSuit mSuit;
+    // La valeur de la carte
     private CardValue mValue;
 
     public Card(CardSuit suit, CardValue value) {
