@@ -15,4 +15,16 @@ public class Pile extends CardPack {
         pack.add(this);
         mCards.clear();
     }
+
+    @Override
+    public void add(Card c) {
+        super.add(c);
+        // TODO voir si on ne coupe pas
+    }
+
+    @Override
+    public void add(CardPack pack) {
+        super.add(pack);
+        // TODO voir si on ne coupe pas
+    }
 }
