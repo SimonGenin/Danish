@@ -4,7 +4,7 @@ import be.simongenin.models.enums.CardSuit;
 import be.simongenin.models.enums.CardValue;
 
 /**
- *
+ * Immutable
  * Created by simon on 02-11-15.
  */
 public class Card {
