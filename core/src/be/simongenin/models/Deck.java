@@ -4,9 +4,7 @@ import be.simongenin.exceptions.EmptyDeckException;
 import be.simongenin.models.enums.CardSuit;
 import be.simongenin.models.enums.CardValue;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Classe représentant un deck de cartes.
@@ -14,17 +12,14 @@ import java.util.List;
  *
  * Created by simon on 03-11-15.
  */
-public class Deck {
-
-    // les cartes contenues dans le deck
-    private List<Card> mCards;
+public class Deck extends CardPack{
 
     /**
      * Créer un nouveau deck de 52 cartes.
      * Le deck n'est pas trié.
      */
     public Deck() {
-        mCards = new ArrayList<Card>();
+        super();
         fillDeck();
     }
 
@@ -55,29 +50,4 @@ public class Deck {
         return mCards.remove(mCards.size() - 1);
     }
 
-    /**
-     * Renvoi le nombre de cartes dans le deck
-     */
-    public int size() {
-        return mCards.size();
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder("Deck : \n");
-        for (Card c : mCards)
-            sb.append(c.toString()).append("\n");
-        return sb.toString();
-    }
-
-    /**
-     * Retourne un string affichant les cartes contenues dans le
-     * deck sous un format de 2 caractères.
-     */
-    public String toStringBrief() {
-        StringBuilder sb = new StringBuilder("Deck : \n");
-        for (Card c : mCards)
-            sb.append(c.toStringBrief()).append("\n");;
-        return sb.toString();
-    }
 }
